@@ -33,9 +33,10 @@
         try {
           evt.preventDefault();
           const datos = new FormData(formSaludo);
-          const nombre = datos.get("nombre");
-          const edad = datos.get("edad");
-          var saludo = new ctrlSaludo(nombre + " "+ edad);
+          const nom = datos.get("nombre");
+          const age = datos.get("edad");
+          var dato = "Nombre: "+ nom + " Edad: "+age
+          const saludo = ctrlSaludo.calculaSaludo(dato);
           formSaludo.salida.value = saludo;
         } catch (error) {
           console.log(error);
